@@ -5,14 +5,14 @@ A plugin to run IPython/Jupyter notebooks from IRC by integrating Papermill with
 """
 from __future__ import unicode_literals, absolute_import, division, print_function
 from sopel import module
-from sopel.config.types import StaticSection, ValidatedAttribute
+from sopel.config.types import StaticSection, ValidatedAttribute, BooleanAttribute
 import papermill as pm
 import json
 
 class PapermillSection(StaticSection):
     nb_dir = ValidatedAttribute('nb_dir', str)
     prefix = ValidatedAttribute('prefix', str)
-    show_last_line = ValidatedAttribute('show_last_line', bool)
+    show_last_line = BooleanAttribute('show_last_line')
 
 def setup(bot):
     bot.config.define_section('papermill', PapermillSection)
