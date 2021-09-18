@@ -55,6 +55,7 @@ def papermill_execute(bot, trigger):
         pm.execute_notebook(path_in, path_out)
     except FileNotFoundError:
         bot.reply('That notebook does not exist.')
+        return
     bot.reply('Notebook ' + nb_name + ' execution ok.')
     if bot.config.papermill.show_last_line :
         bot.say('Last cell output:')
