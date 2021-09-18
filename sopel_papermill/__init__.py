@@ -59,7 +59,7 @@ def papermill_execute(bot, trigger):
     bot.reply('Notebook ' + nb_name + ' execution ok.')
     if bot.config.papermill.show_last_line :
         bot.say('Last cell output:')
-        bot.say(cell_output(path_in, i_cell))
+        bot.say(cell_output(path_in, -1))
     
 @module.commands('papermill-show', 'pm-s')
 @module.example('.pm-s TestNotebook.ipynb 2')
