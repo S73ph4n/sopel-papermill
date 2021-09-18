@@ -10,9 +10,9 @@ import papermill as pm
 import json
 
 class PapermillSection(StaticSection):
-    nb_dir = ValidatedAttribute('nb_dir', str)
-    prefix = ValidatedAttribute('prefix', str)
-    show_last_line = BooleanAttribute('show_last_line')
+    nb_dir = ValidatedAttribute('nb_dir', str, default='./')
+    prefix = ValidatedAttribute('prefix', str, default='')
+    show_last_line = BooleanAttribute('show_last_line', default=False)
 
 def setup(bot):
     bot.config.define_section('papermill', PapermillSection)
